@@ -1,6 +1,8 @@
+
 // components
 import GuestNavbar from './components/GuestNavbar';
 
+// stylesheets
 import './globals.css'
 
 export const metadata = {
@@ -11,10 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body className="container mx-auto bg-gray-50">
-            <GuestNavbar />
-            {children}
-        </body>
+      <body className='bg-zinc-900'>
+          <GuestNavbar />
+          {children}
+      </body>
     </html>
   )
 }
