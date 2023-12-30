@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import GuestNavbar from "../components/GuestNavbar"
 
 export default function LoginAccount() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,7 +25,7 @@ export default function LoginAccount() {
     
             const data = await response.json();
 
-            router.push('/');
+            router.push('/admin/dashboard');
         } catch (error) {
             setError(error.message);
             console.error(error);
@@ -37,7 +36,6 @@ export default function LoginAccount() {
 
     return (
         <>
-            <GuestNavbar />
             <main>
                 <div className="min-h-screen flex justify-center items-center">
                     <div className="lg:w-2/5 md:w-1/2 w-full px-10 md:px-0 lg:px-0 py-2">

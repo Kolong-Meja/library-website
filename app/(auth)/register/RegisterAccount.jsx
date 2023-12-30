@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import GuestNavbar from "../components/GuestNavbar";
+
 
 export default function RegisterAccount() {
     const [isRegistered, setIsRegistered] = useState(false);
@@ -26,7 +26,7 @@ export default function RegisterAccount() {
     
             const data = await response.json();
             
-            router.push('/dashboard');
+            router.push('/admin/dashboard');
         } catch (error) {
             setError(error.message);
             console.error(error);
@@ -37,7 +37,6 @@ export default function RegisterAccount() {
     
     return (
         <>
-            <GuestNavbar />
             <main className="py-16">
                 <div className="min-h-screen flex justify-center items-center">
                     <div className="lg:w-2/5 md:w-1/2 w-full px-10 md:px-0 lg:px-0 py-2">

@@ -11,7 +11,7 @@ export const metadata = {
 export default function GuestLayout({ children }) {
   return (
     <html lang="en">
-      <body className='bg-zinc-900'>
+      <body className='min-h-screen bg-zinc-900'>
         {children}
       </body>
     </html>
