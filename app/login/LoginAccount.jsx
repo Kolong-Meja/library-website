@@ -7,7 +7,7 @@ export default function LoginAccount() {
             <main>
                 <div className="min-h-screen flex justify-center items-center">
                     <div className="lg:w-2/5 md:w-1/2 w-full px-10 md:px-0 lg:px-0 py-2">
-                        <form id="login-form" className="bg-gray-50 p-10 rounded-lg shadow-lg min-w-full">
+                        <form id="login-form" onSubmit={onSubmit} className="bg-gray-50 p-10 rounded-lg shadow-lg min-w-full" method="POST">
                             <h1 className="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Login Account</h1>
                             <div className="flex flex-col space-y-2">
                                 <label className="text-gray-800 font-semibold block my-2 text-md" for="email">Email</label>
