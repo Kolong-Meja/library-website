@@ -1,8 +1,11 @@
 import './globals.css'
 
+const metaTitle = process.env.APP_NAME;
+const metaDescription = process.env.APP_DESC;
+
 export const metadata = {
-  title: 'Library Website',
-  description: 'My Library Website',
+  title: metaTitle,
+  description: metaDescription,
 }
 
 export default function GuestLayout({ children }) {

@@ -4,11 +4,12 @@ import Image from 'next/image';
 /**
  * 
  *  @param {string} bearerToken -> Authentication Token or Bearer Token that you've get from API. 
- *  @param {number} bookId -> Specific ID of book.
  *  @param {string} routeName -> Name of the specific route.
  */
-const getBooksData = async (bearerToken, routeName, bookId) => {
-    const response = await fetch(`https://book-crud-service-6dmqxfovfq-et.a.run.app/api/${routeName}`, {
+const getBooksData = async (bearerToken, routeName) => {
+    const apiUrl = process.env.API_URL;
+
+    const response = await fetch(`${apiUrl}/${routeName}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${bearerToken}`,
@@ -23,8 +24,10 @@ const getBooksData = async (bearerToken, routeName, bookId) => {
 }
 
 export default async function BooksList() {
+    const bearerToken = process.env.BEARER_TOKEN;
+
     const booksData = await getBooksData(
-        "888|F4GBAmj8o2yLpqztE2GdUJz7rJZSPjQcnikXjhMW", 
+        bearerToken, 
         "books"
     );
 
@@ -37,7 +40,7 @@ export default async function BooksList() {
                 {booksData["data"].map((obj) => (
                     <div className="bg-transparent rounded-t-lg overflow-hidden md:max-w-md md:h-min" key={obj.id}>
                         <Link href={"#"}>
-                            <Image src='/just_wallpaper_fifth.jpeg' className="w-full h-64 object-cover object-center" title="Image by: John Doe" width={1000} height={1000} quality={100} />
+                            <Image src='/just_wallpaper_fifth.jpeg' className="w-full h-64 object-cover object-center" alt='Book Image' title="Image by: John Doe" width={1000} height={1000} quality={100} />
                         </Link>
                         <Link href={`/books/${obj.id}`} className="no-underline" title="List of Book">
                             <div className="px-4 pt-4 mb-2">
