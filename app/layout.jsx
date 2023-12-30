@@ -1,24 +1,15 @@
-
-// components
-import GuestNavbar from './components/GuestNavbar';
-
-// stylesheets
 import './globals.css'
 
 export const metadata = {
-  title: 'Library Website with Next JS',
-  description: 'My Library Website with Next JS',
+  title: 'Library Website',
+  description: 'My Library Website',
 }
 
-export default function RootLayout({ children }) {
+export default function GuestLayout({ children }) {
   return (
     <html lang="en">
       <body className='bg-zinc-900'>
-          
-          {/* Navigation Bar */}
-          <GuestNavbar />
-
-          {children}
+        {children}
       </body>
     </html>
   )
