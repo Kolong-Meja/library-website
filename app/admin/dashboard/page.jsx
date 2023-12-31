@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 /**
  * 
@@ -34,7 +35,9 @@ export default async function Dashboard() {
     return (
         <main className='py-20'>
             <div className="join px-10 space-x-4">
-                <button className="btn join-item rounded-lg bg-green-500 text-gray-50 hover:bg-green-600">Create New Book</button>
+                <button className="btn join-item rounded-lg bg-green-500 text-gray-50 hover:bg-green-600">
+                    <Link href={"/admin/dashboard/books/create"}>Create New Book</Link>
+                </button>
             </div>
             {/* Book Card */}
             <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-8">
@@ -46,8 +49,16 @@ export default async function Dashboard() {
                                 <div className='flex items-center justify-between mb-4'>
                                     <p className="text-gray-900 font-bold text-xl mb-2">{book.title}</p>
                                     <div className='flex flex-row space-x-2'>
-                                        <button className="btn join-item rounded-lg bg-yellow-400 text-gray-900 border-none hover:bg-yellow-500">Update</button>
-                                        <button className="btn join-item rounded-lg bg-red-500 text-gray-50 border-none hover:bg-red-600">Remove</button>
+                                        <button className="btn join-item rounded-lg bg-yellow-400 text-gray-900 border-none hover:bg-yellow-500">
+                                            <Link href={"/admin/dashboard/books/update"}>
+                                                Update
+                                            </Link>
+                                        </button>
+                                        <form action="#" method="post">
+                                        <button className="btn join-item rounded-lg bg-red-500 text-gray-50 border-none hover:bg-red-600">
+                                            Delete
+                                        </button>
+                                        </form>
                                     </div>
                                 </div>
                                 <p className="text-gray-700 text-base">{book.description}</p>

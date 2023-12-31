@@ -12,6 +12,7 @@ export default function GuestLayout({ children }) {
   return (
     <html lang="en">
       <body className='min-h-screen bg-zinc-900'>
+        {/* Main Section */}
         {children}
       </body>
     </html>
